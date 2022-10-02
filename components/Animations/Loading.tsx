@@ -2,8 +2,7 @@ import Image from "next/image";
 import { RefObject, useEffect, useRef } from "react";
 import styles from "./Loading.module.scss";
 
-export const Loading: React.FC<{ isShow: boolean }> = ({ isShow }) => {
-  if (!isShow) return null;
+export const Loading: React.FC = () => {
   return (
     <div className={styles.Animation}>
       <div className={styles.Box} />
