@@ -8,12 +8,7 @@ export const Loading: React.FC = () => {
       <div className={styles.Box} />
       <div className={styles.Loading}>
         <p className={styles.Text}>Loading...</p>
-        <Image
-          src={process.env.GITHUB_ACTIONS ? "/portfolio/Icon.png" : "/Icon.png"}
-          height="50"
-          width="50"
-          alt="icon"
-        />
+        <Image src={"/portfolio/Icon.png"} height="50" width="50" alt="icon" />
       </div>
     </div>
   );

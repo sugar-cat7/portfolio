@@ -37,11 +37,7 @@ export const Works = (props: Props) => {
         {works.map((w, i) => (
           <div className={styles.WorkContainer} key={i}>
             <Image
-              src={
-                process.env.GITHUB_ACTIONS
-                  ? `/portfolio/${w.imageName}.png`
-                  : `/${w.imageName}.png`
-              }
+              src={`/portfolio/${w.imageName}.png`}
               width="450"
               height="300"
               alt="work"
