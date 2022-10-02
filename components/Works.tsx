@@ -37,10 +37,10 @@ export const Works = (props: Props) => {
         {works.map((w, i) => (
           <div className={styles.WorkContainer} key={i}>
             <Image
-              src={`/kojin/thumbnail/${w.imageName}.png`}
+              src={`${w.imageName}.png`}
               width="450"
               height="300"
-              alt="test"
+              alt="work"
               objectFit="cover"
             />
             <h2>{w.title}</h2>
