@@ -19,7 +19,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return getLayout(
     <div>
       <Head>
-        <title>Layouts Example</title>
+        <title>Sugar&apos;s portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Component {...pageProps} />
