@@ -8,7 +8,7 @@ export const Loading: React.FC = () => {
       <div className={styles.Box} />
       <div className={styles.Loading}>
         <p className={styles.Text}>Loading...</p>
-        <Image src="Icon.png" height="50" width="50" alt="icon" />
+        <Image src="/Icon.png" height="50" width="50" alt="icon" />
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ export const About: React.FC = () => {
     <div className={styles.About}>
       <div className={styles.IconBox}>
         <h1>Sugar</h1>
-        <Image src="myicon.png" width={50} height={50} />
+        <Image src="/myicon.png" width={50} height={50} />
       </div>
       <div className={styles.IconBox}>
         <h2>Software Engineer</h2>
