@@ -1,0 +1,28 @@
+.LayoutHeader {
+  // .Icon {
+  //   position: absolute;
+  // }
+  nav {
+    text-align: center;
+    background-color: #333;
+    height: 40px;
+    padding-top: 10px;
+    position: sticky;
+    ul {
+      li {
+        list-style: none;
+        display: inline-block;
+        width: 15%;
+        @media screen and (max-width: 768px) {
+          width: 25%;
+        }
+
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
