@@ -20,11 +20,6 @@ export const careerStudents: Career[] = [
     text: "インタビューメーカーの開発",
   },
   {
-    name: "Works Applications, Inc.",
-    season: "2020/12 ~ 2021/2",
-    text: "不動産会計システムの開発",
-  },
-  {
     name: "Sozi, inc.",
     season: "2021/12 ~ 2022/4",
     text: "Pib-Webの開発",
