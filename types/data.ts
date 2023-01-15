@@ -111,11 +111,22 @@ export const works: Works[] = [
   },
   {
     title: "スマート募金",
-    skill: "React / Flask /Arduino",
+    skill: "React / Flask / Arduino",
     imageName: "smartbokin",
     imageLink: "https://github.com/jphacks/C_2105",
     otherLinks: {
       github: "https://github.com/jphacks/C_2105",
+    },
+  },
+  {
+    title: "Covid-19 Dashboard",
+    skill: "Next.js / Go / AWS Lambda",
+    imageName: "covid",
+    imageLink:
+      "https://github.com/sugar-cat7/covid19-dashboard/blob/main/Goacademy.pdf",
+    otherLinks: {
+      github:
+        "https://github.com/sugar-cat7/covid19-dashboard/blob/main/Goacademy.pdf",
     },
   },
 ];
