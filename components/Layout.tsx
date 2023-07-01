@@ -8,13 +8,7 @@ import { Header } from "./Navbar/Header";
 type Props = { children: React.ReactElement };
 
 export const Layout: React.FC<Props> = ({ children }) => {
-  const [isShow, setIsShow] = useState(true);
-  useEffect(() => {
-    setTimeout(() => setIsShow(false), 2200);
-  }, []);
-  return isShow ? (
-    <Loading />
-  ) : (
+  return (
     <>
       <Header />
       <main>{children}</main>

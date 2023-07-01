@@ -44,9 +44,7 @@ export const About: React.FC = () => {
       <h3>Skill/Years Of Experience</h3>
       <ul>
         {skill.map((s, i) => (
-          <li key={i}>
-            {s.name} / {s.span}
-          </li>
+          <li key={i}>{s.name}</li>
         ))}
       </ul>
       <h3>Career / Length Of Service</h3>

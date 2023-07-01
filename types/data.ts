@@ -28,9 +28,14 @@ export const careerStudents: Career[] = [
 ];
 export const careerSociety: Career[] = [
   {
-    name: "???",
-    season: "2022/5 ~ now",
+    name: "Accenture Japan Ltd.",
+    season: "2022/5 ~ 2023/6",
     text: "金融領域のシステム開発",
+  },
+  {
+    name: "???",
+    season: "2023/7 ~ now",
+    text: "AI VoiceBot関連",
   },
 ];
 
@@ -54,11 +59,14 @@ export const about: About[] = [
     text: "好きなもの: テニス、FPSゲーム、アニメ、Vtuber",
   },
   {
-    text: "関心: 競プロ、Web周りのパフォーマンスチューニング、Webフロントエンド",
+    text: "関心: 競プロ、Web周りのパフォーマンスチューニング、セキュリティ",
   },
 ];
 
 export const certification: Certification[] = [
+  {
+    name: "情報処理安全確保支援士",
+  },
   {
     name: "基本/応用情報技術者",
   },
@@ -92,30 +100,12 @@ export const awards: Awards[] = [
 
 export const works: Works[] = [
   {
-    title: "かんたん経路くん",
-    skill: "LIFF / Firebase / React",
-    imageName: "keiro",
-    imageLink: "https://github.com/sugar-cat7/MobilityApp",
+    title: "すぽじゅーる(ぶいすぽ非公式スケジュール",
+    skill: "Next.js / Firebase",
+    imageName: "spodule",
+    imageLink: "https://www.vspo-schedule.com",
     otherLinks: {
-      github: "https://github.com/sugar-cat7/MobilityApp",
-    },
-  },
-  {
-    title: "人数管理アプリ",
-    skill: "React / Ruby on Rails",
-    imageName: "reservation",
-    imageLink: "https://github.com/sugar-cat7/ReservationApp-front",
-    otherLinks: {
-      github: "https://github.com/sugar-cat7/ReservationApp-front",
-    },
-  },
-  {
-    title: "スマート募金",
-    skill: "React / Flask / Arduino",
-    imageName: "smartbokin",
-    imageLink: "https://github.com/jphacks/C_2105",
-    otherLinks: {
-      github: "https://github.com/jphacks/C_2105",
+      webpage: "https://twitter.com/vspodule",
     },
   },
   {
@@ -129,9 +119,44 @@ export const works: Works[] = [
         "https://github.com/sugar-cat7/covid19-dashboard/blob/main/Goacademy.pdf",
     },
   },
+  {
+    title: "スマート募金",
+    skill: "React / Flask / Arduino",
+    imageName: "smartbokin",
+    imageLink: "https://github.com/jphacks/C_2105",
+    otherLinks: {
+      github: "https://github.com/jphacks/C_2105",
+    },
+  },
+  {
+    title: "人数管理アプリ",
+    skill: "React / Ruby on Rails",
+    imageName: "reservation",
+    imageLink: "https://github.com/sugar-cat7/ReservationApp-front",
+    otherLinks: {
+      github: "https://github.com/sugar-cat7/ReservationApp-front",
+    },
+  },
+  {
+    title: "かんたん経路くん",
+    skill: "LIFF / Firebase / React",
+    imageName: "keiro",
+    imageLink: "https://github.com/sugar-cat7/MobilityApp",
+    otherLinks: {
+      github: "https://github.com/sugar-cat7/MobilityApp",
+    },
+  },
 ];
 
 export const other: Other[] = [
+  {
+    year: "2023",
+    content: [
+      {
+        name: "転職(Sier→事業会社)",
+      },
+    ],
+  },
   {
     year: "2022",
     content: [

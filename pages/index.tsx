@@ -11,14 +11,4 @@ Page.getLayout = function getLayout(page: ReactElement) {
   return <Layout>{page}</Layout>;
 };
 
-// export const getStaticProps = async () => {
-//   const data = await client.get({ endpoint: "dev-ex" });
-//   console.log(data);
-//   return {
-//     props: {
-//       experiences: data.contents,
-//     },
-//   };
-// };
-
 export default Page;
