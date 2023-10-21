@@ -46,6 +46,7 @@ export const Works = (props: Props) => {
               width="450"
               height="300"
               alt="work"
+              layout="responsive"
               objectFit="cover"
             />
             <h2>{w.title}</h2>
@@ -66,6 +67,7 @@ export const Works = (props: Props) => {
               width="450"
               height="300"
               alt="work"
+              layout="responsive"
               objectFit="cover"
             />
             <h2>{w.title}</h2>
