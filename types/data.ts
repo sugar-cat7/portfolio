@@ -33,19 +33,17 @@ export const careerSociety: Career[] = [
     text: "金融領域のシステム開発",
   },
   {
-    name: "???",
+    name: "Cyber Agent, Inc.",
     season: "2023/7 ~ now",
-    text: "AI VoiceBot関連",
+    text: "AI VoiceBotの開発",
   },
 ];
 
 export const skill: Skill[] = [
-  { name: "HTML5", span: "1.5" },
-  { name: "CSS3", span: "1.5" },
-  { name: "TypeScript(React(Next.js), Angular) ", span: "1.5" },
-  { name: "Python3(Algorism, Django)", span: "1.5" },
-  { name: "Java(Spring Boot) ", span: "0.5" },
-  { name: "Go", span: "0.5" },
+  { name: "Go" },
+  { name: "Java(Spring Boot) " },
+  { name: "TypeScript(React, Angular) " },
+  { name: "Python3(Algorism, Django)" },
 ];
 
 export const about: About[] = [
@@ -71,13 +69,16 @@ export const certification: Certification[] = [
     name: "基本/応用情報技術者",
   },
   {
-    name: "HTMLプロフェッショナル Lv1",
+    name: "GCP Professional Cloud Architect",
+  },
+  {
+    name: "AWS SAA-02",
   },
   {
     name: "LPIC Lv1",
   },
   {
-    name: "AWS SAA-02",
+    name: "HTMLプロフェッショナル Lv1",
   },
   {
     name: "ファイナンシャルプランナー3級",
@@ -188,5 +189,21 @@ export const other: Other[] = [
         name: "実験力学会 参加",
       },
     ],
+  },
+];
+
+export const articles: Works[] = [
+  {
+    title: "gRPCとフロントエンド_Connectを添えて",
+    skill: "",
+    imageName: "speaker-connect",
+    imageLink:
+      "https://speakerdeck.com/sugarcat7/grpctohurontoento-connectwotian-ete",
+  },
+  {
+    title: "Discord Bot作成を完全に理解する",
+    skill: "",
+    imageName: "zenn-discord",
+    imageLink: "https://zenn.dev/king/articles/4201f4ee821a27",
   },
 ];

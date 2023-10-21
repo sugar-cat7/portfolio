@@ -21,7 +21,12 @@ export const About: React.FC = () => {
     <div className={styles.About}>
       <div className={styles.IconBox}>
         <h1>Sugar</h1>
-        <Image src={"/portfolio/myicon.png"} width={50} height={50} />
+        <Image
+          src={"/portfolio/myicon.png"}
+          width={50}
+          height={50}
+          alt="icon"
+        />
       </div>
       <div className={styles.IconBox}>
         <h2>Software Engineer</h2>
@@ -41,7 +46,7 @@ export const About: React.FC = () => {
           <li key={i}>{a.text}</li>
         ))}
       </ul>
-      <h3>Skill/Years Of Experience</h3>
+      <h3>Skill</h3>
       <ul>
         {skill.map((s, i) => (
           <li key={i}>{s.name}</li>

@@ -7,7 +7,6 @@ export type Career = {
 
 export type Skill = {
   name: string;
-  span: string;
 };
 
 export type About = {
