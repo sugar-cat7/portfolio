@@ -154,6 +154,10 @@ export const other: Other[] = [
     year: "2023",
     content: [
       {
+        name: "ISUCON13 参加",
+        link: "https://scrapbox.io/sugar-dev/ISUCON13%E5%8F%82%E5%8A%A0%E8%A8%98%E9%8C%B2_SHISUCON",
+      },
+      {
         name: "転職(Sier→事業会社)",
       },
     ],
@@ -193,6 +197,34 @@ export const other: Other[] = [
 ];
 
 export const articles: Works[] = [
+  {
+    title: "AIを活用したChatBot・VoiceBotのシステム概観",
+    skill: "",
+    imageName: "speaker-aishift-1",
+    imageLink:
+      "https://speakerdeck.com/cyberagentdevelopers/dui-hua-xing-aipurodakutonojin-tozhan-wang-chatbotvoicebotnokai-fa-ji-shu-wojie-shuo?slide=20",
+  },
+  {
+    title: "ローカルでDrizzle StudioとD1 Driverを使用する際の注意点",
+    skill: "",
+    imageName: "zenn-drizzle",
+    imageLink:
+      "https://zenn.dev/king/articles/3d5610429811eb",
+  },
+  {
+    title: "Azure Container Apps + API Managementで構築するAPI Gateway",
+    skill: "",
+    imageName: "zenn-aca",
+    imageLink:
+      "https://zenn.dev/aishift/articles/881504222e1e85",
+  },
+  {
+    title: "connect-go から学ぶコード生成",
+    skill: "",
+    imageName: "zenn-connect-go",
+    imageLink:
+      "https://zenn.dev/aishift/articles/181bec652a0fc1",
+  },
   {
     title: "gRPCとフロントエンド_Connectを添えて",
     skill: "",
