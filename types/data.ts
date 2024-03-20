@@ -40,10 +40,8 @@ export const careerSociety: Career[] = [
 ];
 
 export const skill: Skill[] = [
-  { name: "Go" },
-  { name: "Java(Spring Boot) " },
-  { name: "TypeScript(React, Angular) " },
-  { name: "Python3(Algorism, Django)" },
+  { name: "Go/TypeScript" },
+  { name: "AWS/GCP/Azure" },
 ];
 
 export const about: About[] = [
@@ -197,6 +195,27 @@ export const other: Other[] = [
 ];
 
 export const articles: Works[] = [
+  {
+    title: "Azure Container AppsのSecret管理とIaC",
+    skill: "",
+    imageName: "speaker-azure-ca",
+    imageLink:
+      "https://speakerdeck.com/sugarcat7/azure-container-apps-secretguan-li-toiac",
+  },
+  {
+    title: "最近個人開発が熱い",
+    skill: "",
+    imageName: "speaker-individual",
+    imageLink:
+      "https://speakerdeck.com/sugarcat7/zui-jin-ge-ren-kai-fa-gare-i",
+  },
+  {
+    title: "新規サービスのバックエンド開発で3ヶ月経ったので、試した技術や取り組みをまとめてみた ",
+    skill: "",
+    imageName: "zenn-aiworker-3month",
+    imageLink:
+      "https://zenn.dev/aishift/articles/ce9783a0d7acd0",
+  },
   {
     title: "AIを活用したChatBot・VoiceBotのシステム概観",
     skill: "",
