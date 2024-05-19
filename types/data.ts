@@ -149,6 +149,15 @@ export const works: Works[] = [
 
 export const other: Other[] = [
   {
+    year: "2024",
+    content: [
+      {
+        name: "TsKaigi登壇(LT)",
+        link: "https://tskaigi.org/talks/sugar235711",
+      },
+    ],
+  },
+  {
     year: "2023",
     content: [
       {
@@ -163,10 +172,6 @@ export const other: Other[] = [
   {
     year: "2022",
     content: [
-      {
-        name: "Go Academy第2期参加",
-        link: "https://www.cyberagent.co.jp/news/detail/id=28026",
-      },
       {
         name: "ISUCON12 参加",
         link: "https://scrapbox.io/sugar-dev/ISUCON12%E4%BA%88%E9%81%B8%E5%8F%82%E5%8A%A0%E8%A8%98",
@@ -195,6 +200,13 @@ export const other: Other[] = [
 ];
 
 export const articles: Works[] = [
+  {
+    title: "Introduction to Database Connection Management Patterns in TypeScript",
+    skill: "",
+    imageName: "speaker-tskaigi-2024",
+    imageLink:
+      "https://speakerdeck.com/sugarcat7/introduction-to-database-connection-management-patterns-in-typescript",
+  },
   {
     title: "Azure Container AppsのSecret管理とIaC",
     skill: "",
