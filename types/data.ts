@@ -152,7 +152,11 @@ export const other: Other[] = [
     year: "2024",
     content: [
       {
-        name: "TsKaigi登壇(LT)",
+        name: "Hono Conference登壇",
+        link: "https://hono.connpass.com/event/319062/",
+      },
+      {
+        name: "TsKaigi登壇",
         link: "https://tskaigi.org/talks/sugar235711",
       },
     ],
@@ -200,6 +204,20 @@ export const other: Other[] = [
 ];
 
 export const articles: Works[] = [
+  {
+    title: "Using Hono in B2B SaaS Application",
+    skill: "",
+    imageName: "speaker-honoconf-2024",
+    imageLink:
+      "https://speakerdeck.com/sugarcat7/using-hono-in-b2b-saas-application",
+  },
+  {
+    title: "Honoを使い倒したい2024",
+    skill: "",
+    imageName: "hono-tukaitaoshi",
+    imageLink:
+      "https://zenn.dev/aishift/articles/a3dc8dcaac6bfa",
+  },
   {
     title: "Introduction to Database Connection Management Patterns in TypeScript",
     skill: "",
