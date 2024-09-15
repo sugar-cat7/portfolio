@@ -34,8 +34,8 @@ export const careerSociety: Career[] = [
   },
   {
     name: "Cyber Agent, Inc.",
-    season: "2023/7 ~ now",
-    text: "AI VoiceBotの開発",
+    season: "2023/7 ~ 2024/9",
+    text: "AI業務改善システムの開発",
   },
 ];
 
@@ -52,7 +52,7 @@ export const about: About[] = [
     text: "学歴: 筑波大学大学院 修士(工学)",
   },
   {
-    text: "好きなもの: テニス、FPSゲーム、アニメ、Vtuber",
+    text: "好きなもの: テニス、FPS、アニメ、Vtuber",
   },
   {
     text: "関心: 競プロ、Web周りのパフォーマンスチューニング、セキュリティ",
@@ -65,6 +65,9 @@ export const certification: Certification[] = [
   },
   {
     name: "基本/応用情報技術者",
+  },
+  {
+    name: "GCP Professional Cloud Developer",
   },
   {
     name: "GCP Professional Cloud Architect",
@@ -204,6 +207,34 @@ export const other: Other[] = [
 ];
 
 export const articles: Works[] = [
+  {
+    title: " GoとWASI~超入門~",
+    skill: "",
+    imageName: "speaker-go-wasi-begginer",
+    imageLink:
+      "https://speakerdeck.com/sugarcat7/gotowasi-chao-ru-men",
+  },
+  {
+    title: "TerraformとAPI Managementを使用したAzure OpenAIのロードバランシング",
+    skill: "",
+    imageName: "speaker-azure-openai-lb",
+    imageLink:
+      "https://zenn.dev/aishift/articles/f82ec60b1762a0",
+  },
+  {
+    title: "最近個人開発が熱い ~多言語対応編~",
+    skill: "",
+    imageName: "speaker-individual-i18n",
+    imageLink:
+      "https://speakerdeck.com/sugarcat7/zui-jin-ge-ren-kai-fa-kare-i-duo-yan-yu-dui-ying-bian",
+  },
+  {
+    title: "ボイラープレート自動生成ツールを使わなくなった話",
+    skill: "",
+    imageName: "speaker-hygen",
+    imageLink:
+      "https://speakerdeck.com/sugarcat7/hoirahuretozi-dong-sheng-cheng-turuwoshi-wanakunatutahua",
+  },
   {
     title: "Using Hono in B2B SaaS Application",
     skill: "",

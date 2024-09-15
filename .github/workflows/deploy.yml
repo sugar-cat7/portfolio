@@ -13,22 +13,22 @@ jobs:
     steps:
       # main ブランチを取得する
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Node.js のセットアップをする
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
-          cache: yarn
+          node-version: 20
+          cache: npm
 
       # パッケージをインストールする
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: npm i --frozen-lockfile
 
       # ビルドする
       - name: Build
-        run: yarn build
+        run: npm run build
 
       # GitHub Pages にデプロイする
       - name: Deploy
