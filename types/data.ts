@@ -37,6 +37,11 @@ export const careerSociety: Career[] = [
     season: "2023/7 ~ 2024/9",
     text: "AI業務改善システムの開発",
   },
+  {
+    name: "???",
+    season: "2024/10 ~",
+    text: "SRE",
+  },
 ];
 
 export const skill: Skill[] = [
@@ -155,6 +160,9 @@ export const other: Other[] = [
     year: "2024",
     content: [
       {
+        name: "転職(10月~)",
+      },
+      {
         name: "Hono Conference登壇",
         link: "https://hono.connpass.com/event/319062/",
       },
@@ -207,6 +215,13 @@ export const other: Other[] = [
 ];
 
 export const articles: Works[] = [
+  {
+    title: " 新規サービス開発で起こったインフラ移行の舞台裏",
+    skill: "",
+    imageName: "zenn-infra",
+    imageLink:
+      "https://zenn.dev/aishift/articles/f350167e896cab",
+  },
   {
     title: " GoとWASI~超入門~",
     skill: "",
