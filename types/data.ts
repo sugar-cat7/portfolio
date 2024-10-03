@@ -72,6 +72,9 @@ export const certification: Certification[] = [
     name: "基本/応用情報技術者",
   },
   {
+    name: "Professional Cloud DevOps",
+  },
+  {
     name: "GCP Professional Cloud Developer",
   },
   {
@@ -215,6 +218,13 @@ export const other: Other[] = [
 ];
 
 export const articles: Works[] = [
+  {
+    title: "HonoとCasbinで認可制御を実装する",
+    skill: "",
+    imageName: "zenn-casbin-hono",
+    imageLink:
+      "https://zenn.dev/king/articles/c9f2ab94499148",
+  },
   {
     title: " 新規サービス開発で起こったインフラ移行の舞台裏",
     skill: "",
