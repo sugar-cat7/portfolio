@@ -46,7 +46,8 @@ export const careerSociety: Career[] = [
 
 export const skill: Skill[] = [
   { name: "Go/TypeScript" },
-  { name: "AWS/GCP/Azure" },
+  { name: "AWS/GCP/Azure/Cloudflare/Vercel" },
+  { name: "Kubernetes"},
 ];
 
 export const about: About[] = [
@@ -72,7 +73,7 @@ export const certification: Certification[] = [
     name: "基本/応用情報技術者",
   },
   {
-    name: "Professional Cloud DevOps",
+    name: "GCP Professional Cloud DevOps",
   },
   {
     name: "GCP Professional Cloud Developer",
@@ -163,6 +164,14 @@ export const other: Other[] = [
     year: "2024",
     content: [
       {
+        name: "TSKaigi Kansai登壇",
+        link: "https://kansai.tskaigi.org/talks/sugar-cat7",
+      },
+      {
+        name: "Offers Event登壇",
+        link: "https://offers-jp.connpass.com/event/331066/"
+      },
+      {
         name: "転職(10月~)",
       },
       {
@@ -218,6 +227,18 @@ export const other: Other[] = [
 ];
 
 export const articles: Works[] = [
+  {
+    title: "SQSで1分未満の定期実行を実現する",
+    skill: "",
+    imageName: "zenn-sqs",
+    imageLink: "https://zenn.dev/king/articles/82608bfcb5d216"
+  },
+  {
+    title: "Honoで実現するバックエンド開発のイマ",
+    skill: "",
+    imageName: "speaker-offers",
+    imageLink: "https://speakerdeck.com/sugarcat7/honodeshi-xian-surubatukuendokai-fa-noima"
+  },
   {
     title: "HonoとCasbinで認可制御を実装する",
     skill: "",
