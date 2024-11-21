@@ -228,6 +228,18 @@ export const other: Other[] = [
 
 export const articles: Works[] = [
   {
+    title: "tslogで実現するセキュアなメタデータ管理とロギング",
+    skill: "",
+    imageName: "speaker-tslog",
+    imageLink: "https://speakerdeck.com/sugarcat7/tslogdeshi-xian-surusekiyuanametadetaguan-li-torogingu"
+  },
+  {
+    title: "最近個人開発が熱い ~モニタリング強化編v0.1.0~",
+    skill: "",
+    imageName: "speaker-individual-monitoring",
+    imageLink: "https://speakerdeck.com/sugarcat7/zui-jin-ge-ren-kai-fa-gare-i-monitaringuqiang-hua-bian-v0-dot-1-0"
+  },
+  {
     title: "SQSで1分未満の定期実行を実現する",
     skill: "",
     imageName: "zenn-sqs",
