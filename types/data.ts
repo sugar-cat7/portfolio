@@ -228,6 +228,12 @@ export const other: Other[] = [
 
 export const articles: Works[] = [
   {
+    title: "HonoでService Workerを扱いやすくする",
+    skill: "",
+    imageName: "hono-service-worker",
+    imageLink: "https://zenn.dev/king/articles/9d1696f2d46107"
+  },
+  {
     title: "tslogで実現するセキュアなメタデータ管理とロギング",
     skill: "",
     imageName: "speaker-tslog",
