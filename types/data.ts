@@ -228,6 +228,12 @@ export const other: Other[] = [
 
 export const articles: Works[] = [
   {
+   title: "OrchestrionとErrorTracking",
+   skill: "",
+   imageName: "orchestrion",
+   imageLink: "https://speakerdeck.com/sugarcat7/errortrackingtoorchestrion"
+  },
+  {
     title: "Cloudflare Workflowsを使いたい倒したい",
     skill: "",
     imageName: "cloudflare-workflows",
