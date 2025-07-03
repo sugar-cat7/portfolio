@@ -48,31 +48,13 @@ function encodeTitle(title: string): string {
   return encodeURIComponent(title).replace(/%/g, '%25');
 }
 
-// APIパスを取得する関数
-function getApiPath(endpoint: string): string {
-  // ブラウザ環境でのみ実行
-  if (typeof window !== 'undefined') {
-    const pathname = window.location.pathname;
-    if (pathname.startsWith('/portfolio')) {
-      return `/portfolio${endpoint}`;
-    }
-  }
-  return endpoint;
-}
-
 export async function fetchZennArticles(username: string): Promise<Article[]> {
   const feedUrl = `https://zenn.dev/${username}/feed?all=1`;
   const items = await fetchRSSFeed(feedUrl);
   
   return items.map(item => {
     // RSSフィードのenclosureからOGP画像を取得
-    let thumbnail = item.enclosure?.url;
-    
-    // enclosureがない場合は、プロキシAPI経由で取得
-    if (!thumbnail && item.link) {
-      // Zennの記事ページからOGP画像を取得するエンドポイントを使用
-      thumbnail = getApiPath(`/api/zenn-ogp?url=${encodeURIComponent(item.link)}`);
-    }
+    const thumbnail = item.enclosure?.url;
     
     return {
       title: item.title,
@@ -89,36 +71,17 @@ export async function fetchSpeakerDeckPresentations(username: string): Promise<A
   const feedUrl = `https://speakerdeck.com/${username}.rss`;
   const items = await fetchRSSFeed(feedUrl);
   
-  // Speaker Deckの各プレゼンテーションのOGP画像を取得
-  const presentationsWithOGP = await Promise.all(
-    items.map(async (item) => {
-      try {
-        // Speaker DeckのOGP画像を取得するためのエンドポイントを使用
-        const thumbnail = getApiPath(`/api/speaker-deck-thumbnail?url=${encodeURIComponent(item.link)}`);
-        
-        return {
-          title: item.title,
-          link: item.link,
-          date: item.pubDate,
-          thumbnail,
-          description: item.description,
-          platform: 'speakerdeck' as const
-        };
-      } catch (error) {
-        console.error('Error processing Speaker Deck presentation:', error);
-        return {
-          title: item.title,
-          link: item.link,
-          date: item.pubDate,
-          thumbnail: undefined,
-          description: item.description,
-          platform: 'speakerdeck' as const
-        };
-      }
-    })
-  );
-  
-  return presentationsWithOGP;
+  return items.map(item => {
+    // Speaker DeckはRSSに画像が含まれないため、getStaticPropsで取得する
+    return {
+      title: item.title,
+      link: item.link,
+      date: item.pubDate,
+      thumbnail: undefined,
+      description: item.description,
+      platform: 'speakerdeck' as const
+    };
+  });
 }
 
 export async function fetchAllArticles(zennUsername: string, speakerdeckUsername: string): Promise<Article[]> {

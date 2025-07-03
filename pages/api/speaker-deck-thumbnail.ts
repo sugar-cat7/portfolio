@@ -35,7 +35,8 @@ export default async function handler(
       res.send(Buffer.from(imageBuffer));
     } else {
       // デフォルト画像を返す
-      res.redirect('/portfolio/speaker-deck-default.png');
+      const basePath = process.env.GITHUB_ACTIONS ? '/portfolio' : '';
+      res.redirect(`${basePath}/speaker-deck-default.png`);
     }
   } catch (error) {
     console.error('Error fetching thumbnail:', error);

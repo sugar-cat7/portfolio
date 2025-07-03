@@ -1,42 +1,24 @@
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement } from "react";
 import { Layout } from "../components";
 import type { NextPageWithLayout } from "./_app";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { fetchAllArticles, Article } from "../lib/rss";
 import styles from "../components/Blog.module.scss";
+import type { GetStaticProps } from "next";
 
-const BlogPage: NextPageWithLayout = () => {
+interface BlogPageProps {
+  articles: Article[];
+}
+
+const BlogPage: NextPageWithLayout<BlogPageProps> = ({ articles }) => {
   const router = useRouter();
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const loadArticles = async () => {
-      setLoading(true);
-      try {
-        const zennUsername = process.env.NEXT_PUBLIC_ZENN_USERNAME || 'king';
-        const speakerdeckUsername = process.env.NEXT_PUBLIC_SPEAKERDECK_USERNAME || 'sugarcat7';
-        const fetchedArticles = await fetchAllArticles(zennUsername, speakerdeckUsername);
-        setArticles(fetchedArticles);
-      } catch (error) {
-        console.error('Failed to fetch articles:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadArticles();
-  }, []);
 
   return (
     <div className={styles.Blog}>
       <h1>登壇 / 記事</h1>
-      {loading ? (
-        <p>読み込み中...</p>
-      ) : (
-        <div className={styles.GridArticles}>
-          {articles.map((article, i) => (
+      <div className={styles.GridArticles}>
+        {articles.map((article, i) => (
             <div
               className={styles.ArticleContainer}
               key={i}
@@ -76,13 +58,70 @@ const BlogPage: NextPageWithLayout = () => {
             </div>
           ))}
         </div>
-      )}
     </div>
   );
 };
 
 BlogPage.getLayout = function getLayout(page: ReactElement) {
   return <Layout>{page}</Layout>;
+};
+
+export const getStaticProps: GetStaticProps<BlogPageProps> = async () => {
+  try {
+    const zennUsername = process.env.NEXT_PUBLIC_ZENN_USERNAME || 'king';
+    const speakerdeckUsername = process.env.NEXT_PUBLIC_SPEAKERDECK_USERNAME || 'sugarcat7';
+    
+    // サーバーサイドで記事を取得
+    const articles = await fetchAllArticles(zennUsername, speakerdeckUsername);
+    
+    // OGP画像を実際に取得する
+    const articlesWithOgp = await Promise.all(
+      articles.map(async (article) => {
+        if (article.platform === 'zenn' && !article.thumbnail && article.link) {
+          try {
+            // ZennのOGP画像を取得
+            const response = await fetch(article.link);
+            const html = await response.text();
+            const ogImageMatch = html.match(/<meta property="og:image" content="([^"]+)"/);
+            if (ogImageMatch) {
+              article.thumbnail = ogImageMatch[1];
+            }
+          } catch (error) {
+            console.error('Failed to fetch OGP for Zenn article:', error);
+          }
+        } else if (article.platform === 'speakerdeck' && article.link) {
+          try {
+            // Speaker DeckのOGP画像を取得
+            const response = await fetch(article.link);
+            const html = await response.text();
+            const ogImageMatch = html.match(/<meta property="og:image" content="([^"]+)"/);
+            if (ogImageMatch) {
+              article.thumbnail = ogImageMatch[1];
+            }
+          } catch (error) {
+            console.error('Failed to fetch OGP for Speaker Deck:', error);
+          }
+        }
+        return article;
+      })
+    );
+    
+    return {
+      props: {
+        articles: articlesWithOgp,
+      },
+      // 1時間ごとに再生成
+      revalidate: 3600,
+    };
+  } catch (error) {
+    console.error('Failed to fetch articles:', error);
+    return {
+      props: {
+        articles: [],
+      },
+      revalidate: 3600,
+    };
+  }
 };
 
 export default BlogPage;
