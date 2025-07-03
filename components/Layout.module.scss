@@ -1,0 +1,17 @@
+.Layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+  main {
+    flex: 1;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 60px; // ヘッダーの高さ分
+    
+    @media screen and (max-width: 500px) {
+      padding-top: 55px; // モバイルヘッダーの高さ分
+    }
+  }
+}

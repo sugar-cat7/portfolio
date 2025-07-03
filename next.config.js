@@ -8,6 +8,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: ['zenn.dev', 'res.cloudinary.com', 'speakerdeck.com', 'files.speakerdeck.com'],
   },
   basePath: process.env.GITHUB_ACTIONS && "/portfolio",
   trailingSlash: true,

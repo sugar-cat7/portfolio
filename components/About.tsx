@@ -14,81 +14,100 @@ import {
   careerStudents,
   certification,
   skill,
+  other,
 } from "../types/data";
 
 export const About: React.FC = () => {
   return (
     <div className={styles.About}>
-      <div className={styles.IconBox}>
-        <h1>Sugar</h1>
-        <Image
-          src={"/portfolio/myicon.png"}
-          width={50}
-          height={50}
-          alt="icon"
-        />
-      </div>
-      <div className={styles.IconBox}>
-        <h2>Software Engineer</h2>
-        <Link href="https://github.com/sugar-cat7">
-          <AiFillGithub size="2em" className={styles.Link} />
-        </Link>
-        <Link href="https://twitter.com/sugar235711">
-          <AiFillTwitterCircle size="2em" className={styles.Link} />
-        </Link>
-        <Link href="https://scrapbox.io/sugar-dev/">
-          <AiOutlineFileText size="2em" className={styles.Link} />
-        </Link>
-      </div>
-      <h3>About</h3>
-      <ul>
-        {about.map((a, i) => (
-          <li key={i}>{a.text}</li>
-        ))}
-      </ul>
-      <h3>Skill</h3>
-      <ul>
-        {skill.map((s, i) => (
-          <li key={i}>{s.name}</li>
-        ))}
-      </ul>
-      <h3>Career / Length Of Service</h3>
-      <div className={styles.Career}>
-        <h4>学生アルバイト</h4>
-        <ul className={styles.Student}>
-          {careerStudents.map((c, i) => (
-            <>
-              <li key={i}>
-                {c.name} / {c.season}
-              </li>
-              {c?.link ? (
-                <li key={i} className={styles.Explanation}>
-                  <a href={c.link} className={styles.Link}>
-                    {c.text}
-                  </a>
-                </li>
-              ) : (
-                <li key={i} className={styles.Explanation}>
+      <h1>About</h1>
+      
+      <section className={styles.Section}>
+        <div className={styles.BasicInfo}>
+          {about.map((a, i) => (
+            <div key={i} className={styles.InfoItem}>
+              {a.text}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.Section}>
+        <h3>Skills</h3>
+        <div className={styles.SkillList}>
+          {skill.map((s, i) => (
+            <span key={i} className={styles.SkillTag}>
+              {s.name}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.Section}>
+        <h3>Career</h3>
+        <div className={styles.Timeline}>
+          {[...careerSociety, ...careerStudents]
+            .sort((a, b) => {
+              // 期間の開始年月を抽出して比較（新しい順）
+              const getStartDate = (season: string) => {
+                const match = season.match(/(\d{4})\/(\d{1,2})/);
+                if (match) {
+                  return new Date(parseInt(match[1]), parseInt(match[2]) - 1);
+                }
+                return new Date(0);
+              };
+              return getStartDate(b.season).getTime() - getStartDate(a.season).getTime();
+            })
+            .map((c, i) => (
+              <div key={i} className={styles.TimelineItem}>
+                <div className={styles.TimelineHeader}>
+                  <span className={styles.Company}>{c.name}</span>
+                  <span className={styles.Period}>{c.season}</span>
+                </div>
+                <div className={styles.TimelineContent}>
                   {c.text}
-                </li>
-              )}
-            </>
+                </div>
+              </div>
+            ))}
+        </div>
+      </section>
+
+      <section className={styles.Section}>
+        <h3>Biography</h3>
+        <div className={styles.Biography}>
+          {other.map((o, i) => (
+            <div key={i} className={styles.YearSection}>
+              <h4>{o.year}</h4>
+              <div className={styles.EventList}>
+                {o.content.map((c, j) => (
+                  <div key={j} className={styles.Event}>
+                    {c?.link ? (
+                      <a href={c.link} className={styles.EventLink}>
+                        <span className={styles.EventName}>{c.name}</span>
+                        <span className={styles.EventIcon}>→</span>
+                      </a>
+                    ) : (
+                      <span className={styles.EventName}>{c.name}</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           ))}
-        </ul>
-        <h4>社会人</h4>
-        <ul>
-          {careerSociety.map((c, i) => (
-            <>
-              <li key={i}>
-                {c.name} / {c.season}
-              </li>
-              <li key={i} className={styles.Explanation}>
-                {c.text}
-              </li>
-            </>
+        </div>
+      </section>
+
+      <section className={styles.Section}>
+        <h3>Certifications</h3>
+        <div className={styles.CertList}>
+          {certification.map((c, i) => (
+            <div key={i} className={styles.CertItem}>
+              <span className={styles.CertIcon}>✓</span>
+              <span>{c.name}</span>
+            </div>
           ))}
-        </ul>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };

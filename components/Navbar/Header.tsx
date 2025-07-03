@@ -9,10 +9,16 @@ export const Header = (props: Props) => {
       <nav>
         <ul>
           <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
             <Link href="/about">About</Link>
           </li>
           <li>
-            <Link href="/other">Other</Link>
+            <Link href="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link href="/other">Works</Link>
           </li>
         </ul>
       </nav>

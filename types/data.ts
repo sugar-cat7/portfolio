@@ -45,14 +45,24 @@ export const careerSociety: Career[] = [
 ];
 
 export const skill: Skill[] = [
-  { name: "Go/TypeScript" },
-  { name: "AWS/GCP/Azure/Cloudflare/Vercel" },
+  { name: "Go" },
+  { name: "TypeScript" },
+  { name: "AWS" },
+  { name: "GCP" },
+  { name: "Azure" },
+  { name: "Cloudflare" },
+  { name: "Vercel" },
   { name: "Kubernetes"},
+  { name: "Datadog" },
+  { name: "Sentry" },
 ];
 
 export const about: About[] = [
   {
-    text: "仕事: ソフトウェア開発",
+    text: "仕事: SWE、SRE",
+  },
+  {
+    text: "得意領域: Webサービスの開発、パブリッククラウドインフラの構築・保守、監視基盤の構築",
   },
   {
     text: "学歴: 筑波大学大学院 修士(工学)",
@@ -61,7 +71,7 @@ export const about: About[] = [
     text: "好きなもの: テニス、FPS、アニメ、Vtuber",
   },
   {
-    text: "関心: 競プロ、Web周りのパフォーマンスチューニング、セキュリティ",
+    text: "関心: パフォーマンスチューニング",
   },
 ];
 
@@ -93,9 +103,6 @@ export const certification: Certification[] = [
   {
     name: "ファイナンシャルプランナー3級",
   },
-  {
-    name: "MOS Excel",
-  },
 ];
 
 export const awards: Awards[] = [
@@ -111,7 +118,7 @@ export const awards: Awards[] = [
 
 export const works: Works[] = [
   {
-    title: "すぽじゅーる(ぶいすぽ非公式スケジュール",
+    title: "すぽじゅーる(ぶいすぽ非公式スケジュール)",
     skill: "Next.js / Firebase",
     imageName: "spodule",
     imageLink: "https://www.vspo-schedule.com",
@@ -119,47 +126,18 @@ export const works: Works[] = [
       webpage: "https://twitter.com/vspodule",
     },
   },
-  {
-    title: "Covid-19 Dashboard",
-    skill: "Next.js / Go / AWS Lambda",
-    imageName: "covid",
-    imageLink:
-      "https://github.com/sugar-cat7/covid19-dashboard/blob/main/Goacademy.pdf",
-    otherLinks: {
-      github:
-        "https://github.com/sugar-cat7/covid19-dashboard/blob/main/Goacademy.pdf",
-    },
-  },
-  {
-    title: "スマート募金",
-    skill: "React / Flask / Arduino",
-    imageName: "smartbokin",
-    imageLink: "https://github.com/jphacks/C_2105",
-    otherLinks: {
-      github: "https://github.com/jphacks/C_2105",
-    },
-  },
-  {
-    title: "人数管理アプリ",
-    skill: "React / Ruby on Rails",
-    imageName: "reservation",
-    imageLink: "https://github.com/sugar-cat7/ReservationApp-front",
-    otherLinks: {
-      github: "https://github.com/sugar-cat7/ReservationApp-front",
-    },
-  },
-  {
-    title: "かんたん経路くん",
-    skill: "LIFF / Firebase / React",
-    imageName: "keiro",
-    imageLink: "https://github.com/sugar-cat7/MobilityApp",
-    otherLinks: {
-      github: "https://github.com/sugar-cat7/MobilityApp",
-    },
-  },
 ];
 
 export const other: Other[] = [
+  {
+    year: "2025",
+    content: [
+      {
+        name: "SRE NEXT登壇",
+        link: "https://sre-next.dev/2025/schedule/#slot100",
+      },
+    ],
+  },
   {
     year: "2024",
     content: [
