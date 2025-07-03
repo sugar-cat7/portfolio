@@ -9,13 +9,14 @@ import {
   AiFillTwitterCircle,
   AiOutlineFileText,
 } from "react-icons/ai";
+import { getImagePath } from "../utils/getImagePath";
 
 const Page: NextPageWithLayout = () => {
   return (
     <div className={styles.Profile}>
       <div className={styles.Hero}>
         <Image
-          src="/myicon.png"
+          src={getImagePath("myicon.png")}
           width={120}
           height={120}
           alt="Sugar Cat"

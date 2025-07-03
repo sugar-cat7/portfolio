@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { works } from "../types/data";
 import styles from "./Works.module.scss";
+import { getImagePath } from "../utils/getImagePath";
 
 type Props = {};
 
@@ -20,7 +21,7 @@ export const Works = (props: Props) => {
           >
             <div className={styles.ImageWrapper}>
               <Image
-                src={`/${w.imageName}.png`}
+                src={getImagePath(`${w.imageName}.png`)}
                 width={1200}
                 height={630}
                 alt={w.title}

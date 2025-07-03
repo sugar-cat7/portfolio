@@ -48,6 +48,18 @@ function encodeTitle(title: string): string {
   return encodeURIComponent(title).replace(/%/g, '%25');
 }
 
+// APIパスを取得する関数
+function getApiPath(endpoint: string): string {
+  // ブラウザ環境でのみ実行
+  if (typeof window !== 'undefined') {
+    const pathname = window.location.pathname;
+    if (pathname.startsWith('/portfolio')) {
+      return `/portfolio${endpoint}`;
+    }
+  }
+  return endpoint;
+}
+
 export async function fetchZennArticles(username: string): Promise<Article[]> {
   const feedUrl = `https://zenn.dev/${username}/feed?all=1`;
   const items = await fetchRSSFeed(feedUrl);
@@ -59,7 +71,7 @@ export async function fetchZennArticles(username: string): Promise<Article[]> {
     // enclosureがない場合は、プロキシAPI経由で取得
     if (!thumbnail && item.link) {
       // Zennの記事ページからOGP画像を取得するエンドポイントを使用
-      thumbnail = `/api/zenn-ogp?url=${encodeURIComponent(item.link)}`;
+      thumbnail = getApiPath(`/api/zenn-ogp?url=${encodeURIComponent(item.link)}`);
     }
     
     return {
@@ -82,7 +94,7 @@ export async function fetchSpeakerDeckPresentations(username: string): Promise<A
     items.map(async (item) => {
       try {
         // Speaker DeckのOGP画像を取得するためのエンドポイントを使用
-        const thumbnail = `/api/speaker-deck-thumbnail?url=${encodeURIComponent(item.link)}`;
+        const thumbnail = getApiPath(`/api/speaker-deck-thumbnail?url=${encodeURIComponent(item.link)}`);
         
         return {
           title: item.title,
