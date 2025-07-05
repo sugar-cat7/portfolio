@@ -4,6 +4,7 @@ import type { NextPageWithLayout } from "./_app";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { fetchAllArticles, Article } from "../lib/rss";
+import { customArticles } from "../types/data";
 import styles from "../components/Blog.module.scss";
 import type { GetStaticProps } from "next";
 
@@ -48,7 +49,7 @@ const BlogPage: NextPageWithLayout<BlogPageProps> = ({ articles }) => {
                 ) : null}
                 <div className={`${styles.NoImage} ${article.thumbnail ? styles.hidden : ''}`}>
                   <div className={styles.NoImageContent}>
-                    <div className={styles.Platform}>{article.platform === 'zenn' ? 'Zenn' : 'Speaker Deck'}</div>
+                    <div className={styles.Platform}>{article.platform === 'zenn' ? 'Zenn' : article.platform === 'speakerdeck' ? 'Speaker Deck' : 'Article'}</div>
                     <div className={styles.Title}>{article.title}</div>
                   </div>
                 </div>
@@ -72,7 +73,7 @@ export const getStaticProps: GetStaticProps<BlogPageProps> = async () => {
     const speakerdeckUsername = process.env.NEXT_PUBLIC_SPEAKERDECK_USERNAME || 'sugarcat7';
     
     // サーバーサイドで記事を取得
-    const articles = await fetchAllArticles(zennUsername, speakerdeckUsername);
+    const articles = await fetchAllArticles(zennUsername, speakerdeckUsername, customArticles);
     
     // OGP画像を実際に取得する
     const articlesWithOgp = await Promise.all(

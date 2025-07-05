@@ -7,6 +7,7 @@ import type {
   Works,
   Other,
 } from "./types";
+import type { Article } from "../lib/rss";
 
 export const careerStudents: Career[] = [
   {
@@ -371,5 +372,29 @@ export const articles: Works[] = [
     skill: "",
     imageName: "zenn-discord",
     imageLink: "https://zenn.dev/king/articles/4201f4ee821a27",
+  },
+];
+
+export const customArticles: Article[] = [
+  {
+    title: "AIを活用したChatBot・VoiceBotのシステム外観",
+    link: "https://speakerdeck.com/cyberagentdevelopers/dui-hua-xing-aipurodakutonojin-tozhan-wang-chatbotvoicebotnokai-fa-ji-shu-wojie-shuo?slide=20",
+    date: "2023-12-14",
+    thumbnail: "/speaker-ca-1.png",
+    platform: "custom",
+  },
+  {
+    title: "Datadogのエラートラッキングにおける効果的なアラート設計について考える",
+    link: "https://sre-magazine.net/articles/7/sugar_cat/",
+    date: "2025-03-24",
+    thumbnail: "/sre-magazine-1.png",
+    platform: "custom",
+  },
+  {
+    title: "メタバースプラットフォームにおけるSentryの導入と活用",
+    link: "https://findy-tools.io/products/sentry/22/550",
+    date: "2025-07-04",
+    thumbnail: "/sentry-1.png",
+    platform: "custom",
   },
 ];

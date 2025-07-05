@@ -14,7 +14,7 @@ export interface Article {
   date: string;
   thumbnail?: string;
   description?: string;
-  platform: 'zenn' | 'speakerdeck';
+  platform: 'zenn' | 'speakerdeck' | 'custom';
   emoji?: string;
 }
 
@@ -84,13 +84,13 @@ export async function fetchSpeakerDeckPresentations(username: string): Promise<A
   });
 }
 
-export async function fetchAllArticles(zennUsername: string, speakerdeckUsername: string): Promise<Article[]> {
+export async function fetchAllArticles(zennUsername: string, speakerdeckUsername: string, customArticles: Article[] = []): Promise<Article[]> {
   const [zennArticles, speakerdeckPresentations] = await Promise.all([
     fetchZennArticles(zennUsername),
     fetchSpeakerDeckPresentations(speakerdeckUsername)
   ]);
   
-  const allArticles = [...zennArticles, ...speakerdeckPresentations];
+  const allArticles = [...zennArticles, ...speakerdeckPresentations, ...customArticles];
   
   // Sort by date (newest first)
   return allArticles.sort((a, b) => {
