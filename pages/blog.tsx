@@ -7,6 +7,7 @@ import { fetchAllArticles, Article } from "../lib/rss";
 import { customArticles } from "../types/data";
 import styles from "../components/Blog.module.scss";
 import type { GetStaticProps } from "next";
+import { getImagePath } from "../utils/getImagePath";
 
 interface BlogPageProps {
   articles: Article[];
@@ -28,7 +29,7 @@ const BlogPage: NextPageWithLayout<BlogPageProps> = ({ articles }) => {
               <div className={styles.ImageWrapper}>
                 {article.thumbnail ? (
                   <Image
-                    src={article.thumbnail}
+                    src={article.platform === 'custom' && !article.thumbnail.startsWith('http') ? getImagePath(article.thumbnail) : article.thumbnail}
                     width={16}
                     height={9}
                     alt={article.title}
